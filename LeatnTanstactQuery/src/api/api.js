@@ -31,4 +31,5 @@ const fetchPosts = async (page) => {
     return response.json();
   };
   
+  
   export {fetchPosts, fetchTags, addPost};
