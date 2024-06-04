@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { useQuery } from '@tanstack/react-query'
 import {fetchPosts} from './api/api'
@@ -10,6 +8,12 @@ import CardPost from './components/CardPost'
 
 
 function App() {
+//  const{data,isLoading}= useQuery({
+//     queryKey:["post"],
+//     queryFn:fetchPosts,
+//   });
+
+//   console.log(data,isLoading)
   
   
 

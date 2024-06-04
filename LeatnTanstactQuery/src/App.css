@@ -1,42 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: sans-serif;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 30px;
+  text-transform: uppercase;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.container > form > button {
+  cursor: pointer;
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  background-color: rgb(37, 37, 37);
+  text-transform: uppercase;
+  color: white;
+  border-radius: 5px;
 }
 
-.card {
-  padding: 2em;
+.postbox {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid grey;
 }
 
-.read-the-docs {
-  color: #888;
+.tags {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  gap: 5;
+  background-color: #f2f3f2;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.post > span {
+  background: #cacaca;
+  padding: 2px 8px 4px 8px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.pages {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
