@@ -17,6 +17,7 @@ const CardPost = () => {
     return <p>Error: {error.message}</p>;
   }
   console.log(data)
+  console.log(data)
 
   const{data:tagsData}=useQuery({
     queryKey:['tags'],
