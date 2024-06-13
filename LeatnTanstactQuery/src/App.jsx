@@ -25,6 +25,7 @@ function App() {
   <CardPost/>
        
       </div>
+      <div>testing if connectd with git</div>
       
     </>
   )
