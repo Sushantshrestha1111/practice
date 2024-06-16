@@ -8,18 +8,16 @@ import CardPost from './components/CardPost'
 
 
 function App() {
-//  const{data,isLoading}= useQuery({
-//     queryKey:["post"],
-//     queryFn:fetchPosts,
-//   });
 
-//   console.log(data,isLoading)
   
   
 
   return (
     <>
       <div>
+        <div><h1> save stack </h1></div>
+        <div><h1>save 2</h1></div>
+        <h1>save 3</h1>
         tanstact query demo
  
   <CardPost/>
