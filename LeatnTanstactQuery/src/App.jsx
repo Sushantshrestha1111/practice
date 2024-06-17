@@ -19,6 +19,7 @@ function App() {
         tanstact query demo
  
   <CardPost/>
+  <CardPost/>
        
       </div>
       
