@@ -19,7 +19,10 @@ function App() {
         tanstact query demo
  
   <CardPost/>
-  <CardPost/>
+  <div>
+    <div className='bg- black h-50'></div>
+  </div>
+ 
        
       </div>
       
