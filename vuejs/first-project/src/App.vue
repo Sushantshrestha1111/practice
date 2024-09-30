@@ -1,17 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div><div>{{greet}} {{name}}</div>
+<div v-html="htmll"></div>
+<h2 v-bind:id="headingid">Heading</h2>
+<button v-bind:disabled="isDisabled">Button</button>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+export default{
+  name:"App",
+  data(){
+    return{
+      name:"Sushant Shrestha",
+      greet:"hello",
+      htmll:"<b>Greattings to all</b>",
+      headingid:"he",
+      isDisabled:true
+    };
+  },
+};
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
 </script>
 
 <style>
