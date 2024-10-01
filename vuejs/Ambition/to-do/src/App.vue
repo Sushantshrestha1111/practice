@@ -12,6 +12,8 @@
  
 <script>
 // "import BackgroundCardVue from "./components/Background-card.vue";"
+
+// asdfasdf
 export default {
   name: 'App',
   // components: {
