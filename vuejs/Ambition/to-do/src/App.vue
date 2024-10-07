@@ -1,96 +1,49 @@
 <template>
-  <form>
-<div>
-  <pre>
-    {{ JSON.stringify(formValues,null,2) }}
-  </pre>
-</div>
-    <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" v-model="formValues.name">
-    </div>
-
-    <div>
-      <label for="Profilesummary">profile summery</label>
-      <input id="profile" v-model="formValues.profileSummary"/>
-    </div>
-
-    <div>
-      <label for="country">country</label>
-      <select id="country" v-model="formValues.country">
-        <option value="">Select a Country</option>
-        <option value="nepal">nepal</option>
-        <option value="India">India</option>
-        <option value="China">China</option>
-      </select>
-    </div>
-<div>
   <div>
-      <label for="joblocation">job country</label>
-      <select id="joblocation" multiple v-model="formValues.job_location">
-        <option value="">Select a JOb location</option>
-        <option value="nepal">nepal</option>
-        <option value="India">India</option>
-        <option value="China">China</option>
-      </select>
-    </div>
+    <!-- <ArticleComponent title="First Article" :likes="50"></ArticleComponent> -->
+    <h1>name: {{username}}</h1>
+    <Component1Vue/>
+  </div>
 
-</div>
-   
-  </form>
   
-
+  
+  <button @click="showPopup=true">show popup</button>
+  
+  <Popup v-if="showPopup" @close="showPopup=false"/>
+  
 
 </template>
- 
+
+
+
 <script>
+// import ArticleComponent from "./components/Article.vue";
+import Component1Vue from './components/Component1.vue';
+import Popup from './components/Popup.vue';
 
-
-// "import BackgroundCardVue from "./components/Background-card.vue";"
-
-// asdfasdf
 export default {
-  name: 'App',
- 
+  name: "App",
+  components: {
+    // ArticleComponent,
+    Component1Vue,
+    Popup
+  },
   data() {
-    return{
-      formValues:{
-        name:'',
-        profileSummary:'',
-        country:'',
-        job_location:[],
-      }
-     
+    return {
+      username: 'Sushant Shrestha',
+      showPopup:false,
+    };
+  },
+  provide() {
+    return {
+      username: this.username,
+    };
+  },
+
+  methods:{
+    togglePopup(){
+      this.showPopup = !this.showPopup;
     }
   }
-  
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.underline{
-  text-decoration: underline;
-
-}
-.promoted{
-  font-style: italic; 
-}
-.sold-out{
-  color: red;
-
-}
-
-.new{
-  color: green;
-
-}
-</style>
