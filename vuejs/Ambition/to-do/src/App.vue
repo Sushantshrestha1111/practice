@@ -1,49 +1,31 @@
-<template>
-  <div>
-    <!-- <ArticleComponent title="First Article" :likes="50"></ArticleComponent> -->
-    <h1>name: {{username}}</h1>
-    <Component1Vue/>
-  </div>
+<template >
+<NameList>
+  <template v-slot:default="slotProps">
+    {{ slotProps.firstName }} {{ slotProps.lastName }}
+  </template>
+</NameList>
+<NameList>
+  <template v-slot:default="slotProps">
+    {{ slotProps.firstName }}
+  </template>
+</NameList>
 
-  
-  
-  <button @click="showPopup=true">show popup</button>
-  
-  <Popup v-if="showPopup" @close="showPopup=false"/>
-  
-
+<NameList>
+  <template v-slot:default="slotProps">
+    {{ slotProps.lastName }} {{ slotProps.firstName }}
+  </template>
+</NameList>
 </template>
-
-
-
 <script>
-// import ArticleComponent from "./components/Article.vue";
-import Component1Vue from './components/Component1.vue';
-import Popup from './components/Popup.vue';
-
+import NameList from './components/NameList.vue';
 export default {
-  name: "App",
-  components: {
-    // ArticleComponent,
-    Component1Vue,
-    Popup
-  },
-  data() {
-    return {
-      username: 'Sushant Shrestha',
-      showPopup:false,
-    };
-  },
-  provide() {
-    return {
-      username: this.username,
-    };
-  },
+name:"App",
+components:{
+  NameList,
 
-  methods:{
-    togglePopup(){
-      this.showPopup = !this.showPopup;
-    }
-  }
-};
+}
+}
 </script>
+<style>
+
+</style>
