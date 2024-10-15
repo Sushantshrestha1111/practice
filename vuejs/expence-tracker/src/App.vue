@@ -5,7 +5,7 @@
  </div>
  <div class="container">
 
-  <IncomeExpence :income="income" :expense="expence"/>
+  <IncomeExpence :income="+income" :expense="+expence"/>
   <TransactionList :transactions="transactions"/>
   <AddTrancation/>
   

@@ -20,12 +20,23 @@
       <button class="btn">Add transaction</button>
     </form>
   </template>
-<script>
-export default {
-    
-    name :"AddTrancation"
+<script setup>
+import { useToast } from 'vue-toastification';
+import {ref} from 'vue'
+
+const text=ref('')
+const amount=ref('')
+
+
+const tost=useToast
+const onSubmit=()=>{
+  if(!text.value ||!amount.value){
+    tost.error('both field null');
+    return;
+  }
+  console.log("button pressed")
+  text.value=""
+  amount.value=""
 }
+
 </script>
-<style >
-    
-</style>
