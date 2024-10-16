@@ -13,7 +13,7 @@
 <NameList>
   <template v-slot:default="slotProps">
     {{ slotProps.lastName }} {{ slotProps.firstName }}
-  </template>
+   </template>
 </NameList>
 </template>
 <script>

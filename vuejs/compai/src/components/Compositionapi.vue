@@ -1,16 +1,12 @@
 <template>
-
-    <div>
-        <h1>This is the composition api</h1>
-        
-    </div>
+  <div>
+    <h1>This is the composition api</h1>
+    <h1>This is the composition api</h1>
+  </div>
 </template>
 <script>
 export default {
-    name:"CompositionApi",
-    
-}
+  name: "CompositionApi",
+};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>
