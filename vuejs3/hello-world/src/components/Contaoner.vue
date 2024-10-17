@@ -5,30 +5,10 @@
         <div class="max-w-xl ">
 
 
-            <card>
-                <template v-slot:Title>
-                    <span>New task</span>
-                </template>
-                <template v-slot:Description>
-                    <span>New description</span>
-                </template>
-            </card>
-            <card>
-                <template v-slot:Title>
-                    <span>Task 1</span>
-                </template>
-                <template v-slot:Description>
-                    <span>New description</span>
-                </template>
-            </card>
-            <card>
-                <template v-slot:Title>
-                    <span>Task</span>
-                </template>
-                <template v-slot:Description>
-                    <span>New description</span>
-                </template>
-            </card>
+            <Card :task="{id: 1, title: 'Finish Project', description: 'Complete by EOD', priority: 1}" />
+<Card :task="{id: 2, title: 'Exercise', description: '30 mins cardio', priority: 2}" />
+<Card :task="{id: 3, title: 'Watch TV', description: 'Relax with a movie', priority: 3}" />
+
         </div>
         
       </div>
