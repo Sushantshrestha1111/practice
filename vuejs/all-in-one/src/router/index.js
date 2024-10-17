@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
 import ExpenceTracker from '@/views/ExpenceTracker.vue'
+import ToDo from '@/views/ToDo.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'todo',
+    component: ToDo
   },
   {
     path: '/expence',
