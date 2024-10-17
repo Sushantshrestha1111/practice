@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mt-20">
+    <div>
     <Header></Header>
     <Balance :total="total" />
   </div>
@@ -12,6 +13,7 @@
    
     <AddTransaction @transactionSubmitted="handleTransaction"/>
    
+  </div>
   </div>
 </template>
 

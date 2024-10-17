@@ -1,22 +1,58 @@
 <template>
+    <div class="w-full">
+      <AddToDoList @todosubmit="handleToDoSubmit" />
+      <ToDoList :todolist="todolist" @todoDelete="handleToDoDelete"/>
+    </div>
+  </template>
+  
+  <script setup>
+  import { ref, onMounted } from 'vue';
+  import AddToDoList from '@/components/AddToDoList.vue';
+  import ToDoList from '@/components/ToDoList.vue';
+  import { useToast } from 'vue-toastification';
+  
+  
+  const toast = useToast();
+  
+  // Reactive to-do list
+  const todolist = ref([
     
-    <AddToDoList/>
-    <ToDoList :todolist="todolist"/>
-    
-</template>
-<script setup>
+  ]);
+  
+  // Load from localStorage when component mounts
+  onMounted(() => {
+    const savedTodos = JSON.parse(localStorage.getItem('todolist'));
+    if (savedTodos) {
+      todolist.value = savedTodos;
+    }
+  });
+  
+  // Handle submission of new to-do item
+  const handleToDoSubmit = (todoitem) => {
+    todolist.value.push({
+      id: generateId(),
+      title: todoitem.title,
+      description: todoitem.description,
+      priority: todoitem.priority,
+    });
+    saveToLocalStorage();
+  
+    // Corrected toast success message
+    toast.success('Added to local storage');
+  };
 
-import AddToDoList from '@/components/AddToDoList.vue';
-
-import ToDoList from '@/components/ToDoList.vue';
-import {ref} from 'vue'
-
-const todolist =ref([
-    {id:1,title:'task1',description:'des of task 1',priority:2},
-    {id:2,title:'task2',description:'des of task 1',priority:3},
-    {id:3,title:'task3',description:'des of task 1',priority:1},
-    {id:4,title:'task4',description:'des of task 1',priority:2},
-])
-
-
-</script>
+  const handleToDoDelete=(id)=>{
+    todolist.value = todolist.value.filter(todo => todo.id !== id);
+  saveToLocalStorage(); // Update localStorage
+  toast.success('Task removed successfully');
+  }
+  
+  // Save the to-do list to localStorage
+  const saveToLocalStorage = () => {
+    localStorage.setItem('todolist', JSON.stringify(todolist.value));
+  };
+  
+  // Generate a unique ID for each task
+  const generateId = () => Math.floor(Math.random() * 10000);
+  </script>
+  

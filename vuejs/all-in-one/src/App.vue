@@ -1,9 +1,13 @@
 <template>
-  <nav>
+  <div class="fixed top-0 items-center  mb-10" >
+    <nav>
      <router-link to="/expence">Expence Tracker</router-link> |
     <router-link to="/">To DO</router-link> 
    
   </nav>
+
+  </div>
+  
   <router-view/>
 </template>
 

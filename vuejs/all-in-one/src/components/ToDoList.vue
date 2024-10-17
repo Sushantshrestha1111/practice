@@ -5,7 +5,7 @@
       <div
         v-for="todo in todolist"
         :key="todo.id"
-        :class="['rounded-lg shadow-lg mb-4 p-4 relative flex',
+        :class="['rounded-lg shadow-lg w-full mb-4 p-4 relative flex',
             getPriorityClassBg(todo.priority)
         ]"
       >
@@ -22,7 +22,13 @@
           <div class="flex flex-col items-start">
             <span class="text-xl font-semibold text-gray-800">{{ todo.title }}</span>
             <span class="text-gray-600">{{ todo.description }}</span>
+            <button 
+               class="rounded-full bg-slate-500 w-11" 
+               @click="deleteTodo(todo.id)"> del
+              </button>
           </div>
+
+      
         </div>
       </div>
     </div>
@@ -30,6 +36,8 @@
   
   <script setup>
   import { defineProps } from 'vue';
+
+  const emit=defineEmits(['todoDelete'])
   
   defineProps({
     todolist: {
@@ -37,29 +45,37 @@
       required: true,
     },
   });
+
+  const deleteTodo=(id)=>{
+    emit('todoDelete',id)
+  }
   
   // Function to get priority class based on priority level
   const getPriorityClass = (priority) => {
     switch (priority) {
       case 1:
-        return "bg-red-400";
+        return "bg-blue-200";
       case 2:
-        return "bg-yellow-400";
+        return "bg-red-200";
       case 3:
-        return "bg-green-400";
+        return "bg-yellow-200";
+        case 4:
+          return "bg-green-200"
       default:
-        return "bg-gray-200"; 
+        return "bg-blue-200"; 
     }
 
   };
   const getPriorityClassBg = (priority)=>{
         switch (priority){
             case 1:
-                return "bg-red-50";
+                return "bg-grey-100";
                 case 2:
-                    return "bg-yellow-50";
+                    return "bg-red-50";
                     case 3:
-                        return "bg-green-50";
+                        return "bg-yellow-50";
+                        case 4:
+                          return "bg-green50"
                         default:
                             return "bg-grey-50";
         }
