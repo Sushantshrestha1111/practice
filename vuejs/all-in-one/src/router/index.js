@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
 import ExpenceTracker from '@/views/ExpenceTracker.vue'
 import ToDo from '@/views/ToDo.vue'
 

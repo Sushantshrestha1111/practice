@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">To-Do</h1>
-    </div>
+    
     <AddToDoList/>
     <ToDoList :todolist="todolist"/>
     
