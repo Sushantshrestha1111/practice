@@ -1,106 +1,69 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <q-layout :class="{'q-dark': $q.dark.isActive, 'q-light': !$q.dark.isActive}">
+    <!-- Header with Tailwind Dark Mode Classes -->
+    <header :class="{
+        'bg-white text-black border-b border-gray-200': !$q.dark.isActive, 
+        'bg-gray-800 text-white border-b border-gray-700': $q.dark.isActive
+    }" class="fixed relative top-0 left-0 w-full">
+      <div class="flex items-center max-w-6xl mx-auto px-6 h-14">
+        <!-- Logo -->
+        <div class="mr-4">
+          <a href="/">
+            <img src="" alt="Logo" class="h-8" />
+          </a>
+        </div>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <!-- Search -->
+        <div class="flex-grow relative max-w-md">
+          <input :class="{
+            'bg-grey-300 text-black':!$q.dark.isActive,
+            'bg-slate-900 text-white':$q.dark.isActive,
+          }"
+            type="text"
+            placeholder="Search"
+            class="w-full h-10 pl-10 pr-3 bg-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 "
+          />
+          <div class="absolute inset-y-0 left-2 flex items-center">
+            <img class="" src="../assets/images/search-icon.svg" alt="Search Icon" />
+          </div>
+        </div>
 
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
+        <!-- Navigation -->
+        <nav class="ml-auto md:flex space-x-6">
+          <v-icon name="IoSearchOutline" class="text-xl text-blue-500" />
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+          <!-- Route link to message -->
+          <RouterLink to="/message" class="text-black dark:text-white">
+            <div>
+              <img class="" src="../assets/images/nav-messaging.svg" alt="Messaging Icon" />
+            </div>
+          </RouterLink>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+          <div>
+            <img class="" src="../assets/images/nav-notifications.svg" alt="Notifications Icon" />
+          </div>
 
-    <q-page-container>
+          <RouterLink to="/" class="text-black dark:text-white">
+            <div>
+              <img class="w-8 h-8 rounded-full" src="../assets/images/user.svg" alt="Profile Icon" />
+            </div>
+          </RouterLink>
+
+          <!-- Dark Mode Toggle -->
+          <q-toggle
+            v-model="$q.dark.isActive"
+            label="Dark Mode"
+          />
+        </nav>
+      </div>
+    </header>
+
+    <div class="">
       <router-view />
-    </q-page-container>
+    </div>
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
-
-defineOptions({
-  name: 'MainLayout'
-})
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
+// No need to import NewDark component unless it's necessary
 </script>

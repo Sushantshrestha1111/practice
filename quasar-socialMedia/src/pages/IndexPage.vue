@@ -1,14 +1,17 @@
+
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-  </q-page>
+
+<q-card class="my-card">
+      <q-card-section>
+        {{ lorem }} this is the card
+      </q-card-section>
+    </q-card>
+<span></span>
 </template>
 
 <script setup>
+import MainLayout from 'src/layouts/MainLayout.vue';
+// import MainLayout from 'src/layouts/MainLayout.vue';
 defineOptions({
   name: 'IndexPage'
 });
