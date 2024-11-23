@@ -1,5 +1,6 @@
 <template>
-    <div>    <q-card class="my-card">
+    <div>    
+      <q-card class="my-card">
       <q-card-section>
         <div class="flex flex-col item center justify-center">
             <!-- Top -->

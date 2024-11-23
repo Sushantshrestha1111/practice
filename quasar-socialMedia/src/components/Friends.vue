@@ -5,9 +5,7 @@
         :src="avatar"
         alt="Profile"
       />
-      <div class="ml-2 flex flex-col">
-        <strong>{{ firstName }} {{lastName}}</strong> 
-      </div>
+      
     </div>
   </template>
   

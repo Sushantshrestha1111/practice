@@ -1,9 +1,10 @@
 
 <template>
   <div class=" flex flex-row w-full">
-    <div class="flex-2"><Left/></div>
-    <div class="flex-1"><Center/></div>
-    <div class="flex-2"> <Right/></div>
+    <div class="flex-2 p-10px"><Left/></div>
+    <div class="flex-1 p-10px"><Center/></div>
+    
+    <div class="flex-2  mt-5 pr-5"> <Right/></div>
     
    
 
