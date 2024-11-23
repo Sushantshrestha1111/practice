@@ -27,8 +27,7 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
     css: [
-      
-      'app.scss', 
+      'app.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -85,12 +84,7 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {
-
-        dark:"auto"
-      
-      },
-      
+      config: {},
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -193,7 +187,7 @@ module.exports = configure(function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasar-socialmedia'
+        appId: 'quasar-practice'
       }
     },
 

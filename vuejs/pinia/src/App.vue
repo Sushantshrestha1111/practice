@@ -5,6 +5,7 @@
       <h1>Pinia Task</h1>
     </header>
     <AddTask/>
+    
    
     <div>
         <button @click="filter='all'">Show All</button>
