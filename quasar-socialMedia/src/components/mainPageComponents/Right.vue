@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1><strong>Chat With Friends</strong></h1>
+  <div class="xl:min-w-50px">
+    <strong><span class="text-green">Chat With Friends</span></strong>
     <div v-if="loading">Loading...</div>
     <router-link
         v-for="friend in friends"

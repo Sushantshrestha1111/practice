@@ -4,7 +4,7 @@
         
         <div class="grid-area-leftside">
       <!-- ArtCard -->
-      <div class="mb-2 bg-white rounded-lg shadow-sm">
+      <div class="mb-2  rounded-lg shadow-sm">
         <!-- User Info -->
         <div class="border-b border-gray-200 p-4 text-center">
           <div
@@ -30,8 +30,8 @@
             class="flex justify-between items-center px-4 py-2 hover:bg-gray-100"
           >
             <div class="text-left">
-              <span class="block text-sm text-gray-600">Connections</span>
-              <span class="block text-sm text-gray-900">Grow your network</span>
+              <span class="block text-sm text-gray-600">friends</span>
+             
             </div>
             <img src="" alt="Widget Icon" />
           </a>
@@ -50,7 +50,7 @@
       </div>
   
       <!-- Community Card -->
-      <div class="bg-white rounded-lg shadow-sm pt-2">
+      <div class=" rounded-lg shadow-sm pt-2">
         <a href="#" class="block text-sm px-4 py-2 hover:text-blue-600">Groups</a>
         <a href="#" class="block text-sm px-4 py-2 hover:text-blue-600">
           Events

@@ -1,7 +1,7 @@
 <template>
-    <div class="p-5">
+    <div class="ml-5 mr-5">
       <!-- Make the container a Flex Row -->
-      <div class="flex flex-row flex-wrap gap-4">
+      <div class="flex flex-row flex-wrap gap-4 ">
         <router-link
           v-for="friend in friends"
           :key="friend.id"

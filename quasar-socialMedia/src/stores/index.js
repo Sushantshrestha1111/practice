@@ -19,12 +19,12 @@ export const useFriendsStore = defineStore('friends', () => {
 
   // Fetch friends from API
   const fetchFriends = async () => {
-    if (friends.value.length > 0) return; // Avoid fetching if already fetched
+    if (friends.value.length > 0) return; 
     loading.value = true;
     try {
       const response = await fetch("https://reqres.in/api/users");
       const data = await response.json();
-      friends.value = data.data; // Save fetched data to the state
+      friends.value = data.data;
     } catch (error) {
       console.error("Error fetching friends:", error);
     } finally {
@@ -35,11 +35,9 @@ export const useFriendsStore = defineStore('friends', () => {
   return { friends, loading, fetchFriends };
 });
 
-export default store((/* { ssrContext } */) => {
+export default store(() => {
   const pinia = createPinia()
 
-  // You can add Pinia plugins here
-  // pinia.use(SomePiniaPlugin)
-
+ 
   return pinia
 })

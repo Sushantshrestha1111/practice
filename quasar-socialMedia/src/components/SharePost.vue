@@ -14,8 +14,8 @@
             'bg-slate-900 text-white':$q.dark.isActive,
           }"
             type="text"
-            placeholder="Search"
-            class="w-full h-10 pl-10 pr-3 bg-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 "
+            placeholder="Post a New post Here "
+            class="w-full h-10 pl-10 pr-3  rounded-md bg-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 "
           />
           
         </div>
@@ -23,27 +23,27 @@
 
              <!-- buttom -->
 
-             <div class="flex flex-row mt-5  space-between ">
-                <div class="flex flex-row ">
+             <div class="flex flex-row mt-5  justify-between  item-center  pr-5 ">
+                <div class="flex flex-row  ">
                     <img
             src="../assets/images/my.jpg"
             class="rounded-full h-10 w-10 ml-2 mr-2 "/>
 
-                    <span>Item</span>
+                    <span class="pt-2">ADD Post</span>
                 </div>
                 <div class="flex flex-row">
                     <img
             src="../assets/images/my.jpg"
             class="rounded-full h-10 w-10 ml-2 mr-2"/>
 
-                    <span>Item</span>
+                    <span class="pt-2 pl-2">ADD reals</span>
                 </div>
                 <div class="flex flex-row">
                     <img
             src="../assets/images/my.jpg"
             class="rounded-full h-10 w-10 ml-2 mr-2"/>
 
-                    <span>Item</span>
+                    <span class="pt-2 pl-2">ADD Items</span>
                 </div>
 
 

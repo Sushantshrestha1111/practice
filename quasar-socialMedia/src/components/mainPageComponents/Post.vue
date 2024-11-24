@@ -1,5 +1,5 @@
 <template >
-    <div class=" mt-5 pr-5">
+    <div class=" mt-5 ">
         <q-card class="my-card">
             <q-card-section>
              <div class="flex flex-col">
@@ -16,9 +16,13 @@
                 </div>
 
                 <div class="flex flex-col mt-5">
-                    <span class="text-black text-sm italic">The description of the post goes here</span>
+                    <span :class="{
+            'text-black':!$q.dark.isActive,
+            ' text-white':$q.dark.isActive,
+          }"
+          class="text-italic">The description of the post goes here</span>
                     <div>
-                        <img src="../../assets/images/tommy.jpg"
+                        <img src="../../assets/images/my.jpg"
                         class="object-contain w-full h-full p-2 pr-2 pl-2"/>
                     </div>
                    
